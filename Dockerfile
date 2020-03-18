@@ -3,7 +3,7 @@ FROM node:dubnium
 EXPOSE 8080
 
 RUN apt-get update && \
-    apt-get install -y git
+    apt-get install -y git libxkbfile-dev libsecret-1-dev
 
 RUN git clone https://github.com/cdr/code-server /code-server && \
     cd /code-server && \
