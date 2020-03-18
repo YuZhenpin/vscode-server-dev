@@ -8,7 +8,7 @@ RUN apt-get update && \
 RUN git clone https://github.com/cdr/code-server /code-server && \
     cd /code-server && \
     yarn && \
-    yarn vscode && \
+    yarn vscode
 
 WORKDIR /code-server
 
