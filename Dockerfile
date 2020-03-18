@@ -8,3 +8,5 @@ RUN git clone https://github.com/cdr/code-server.git && \
     cd code-server && \
     npm install && \
     npm run watch
+
+EXPOSE 8080
