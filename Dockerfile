@@ -1,16 +1,15 @@
-FROM node:13.10.1-stretch
+FROM node:dubnium
 
 EXPOSE 8080
 
 RUN apt-get update && \
     apt-get install -y git
 
-RUN git clone https://github.com/microsoft/vscode && \
-    cd vscode && \
+RUN git clone https://github.com/cdr/code-server /code-server && \
+    cd /code-server && \
     yarn && \
-    git clone https://github.com/cdr/code-server src/vs/server && \
-    cd src/vs/server && \
-    yarn && \
-    yarn patch:apply && \
-    yarn watch && \
-    yarn start
+    yarn vscode && \
+
+WORKDIR /code-server
+
+CMD yarn watch
