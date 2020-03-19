@@ -3,7 +3,7 @@ FROM node:dubnium
 EXPOSE 8080
 
 RUN apt-get update && \
-    apt-get install -y git libxkbfile-dev libsecret-1-dev
+    apt-get install -y git libx11-dev libxkbfile-dev libsecret-1-dev fakeroot rpm
 
 RUN git clone https://github.com/cdr/code-server /code-server && \
     cd /code-server && \
