@@ -12,4 +12,4 @@ RUN git clone https://github.com/cdr/code-server /code-server && \
 
 WORKDIR /code-server
 
-CMD yarn watch
+CMD yarn watch --host 0.0.0.0 --auth none
